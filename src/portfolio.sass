@@ -1,0 +1,193 @@
+.panel
+  margin: 0
+  padding: 0
+  height: 100vh
+  width: auto
+
+.one
+  background-image: url("../public/img/background.png")
+  background-color: #877
+  background-blend-mode: overlay
+  background-repeat: no-repeat
+  background-size: contain
+  background-attachment: fixed
+  background-position: center
+  // clip-path: polygon(0vw 0vh, 0vw 0vh, 0vw 0vh, 0vw 0vh, 0vw 0vh)
+  animation: wipe 0.7s linear
+  animation-fill-mode: forwards
+  animation-delay: 1s
+
+.overlay
+  width: 60vmin
+  max-width: 500px
+  position: fixed
+  top: 30vh
+  left: 30vw
+  background-color: rgba(69, 69, 69, 0.5)
+  //clip-path: polygon(0vw 0vh, 0vw 0vh, 0vw 0vh, 0vw 0vh, 0vw 0vh)
+  animation: wipe 1s linear
+  animation-fill-mode: forwards
+  animation-delay: 1.75s
+  transition: 0.5s ease
+  z-index: 100
+  margin: 0
+  padding: 0
+
+  .logo
+    padding: 1vmin
+    width: 50vmin
+    max-width: 500px
+    height: 10vmin
+    max-height: 100px
+    transition: 0.5s ease
+
+  .text
+    font-size: max(12px, 1.6vmin)
+    transition: opacity 2s
+    opacity: 1
+    font-family: 'Roboto', sans-serif
+
+  .navbar-toggler, .navbar-collapse
+    visibility: hidden
+    width: 0
+    height: 0
+
+.navbar-brand
+  margin: 0
+
+//.nav-box
+//  .overlay
+//    width: 100%
+//    height: 5vh
+//    position: fixed
+//    top: 0
+//    left: 0
+//
+//    .logo
+//      filter: invert(15%)
+//      float: left
+//
+//  nav
+//    visibility: hidden
+
+//#navbar
+//    overflow: hidden
+//    background-color: #f1f1f1
+//    padding: 90px 10px
+//    transition: 0.4s
+//    position: fixed
+//    width: 100%
+//    top: 0
+//    z-index: 99
+//
+//
+//#navbar-right
+//  float: right
+//
+//@media screen and (max-width: 580px)
+//  #navbar
+//    padding: 20px 10px !important
+//  #navbar a
+//    float: none
+//    display: block
+//    text-align: left
+//  #navbar-right
+//    float: none
+
+.skill-graph
+  width: min(80%,100vh) !important
+  height: 30vw !important
+  margin: auto
+  border-width: 1px
+  border-radius: 10px
+  border-color: white
+
+.snow
+  position: absolute
+  min-width: 100vw
+  min-height: 100vh
+  height: 100%
+  width: 100%
+  top: 0
+  left: 0
+  z-index: -1
+
+  .svg
+    position: absolute
+    width: 100%
+    height: 100%
+
+#snow-top-layer
+  will-change: transform
+  transform: translateY(-768px)
+  animation: fall 10s infinite linear
+
+#snow-bottom-layer
+  will-change: transform
+  transform: translateY(-768px)
+  animation: fall 20s infinite linear
+
+@keyframes fall
+  100%
+    transform: translateY(0)
+
+.image
+  position: relative
+  display: flex
+  justify-content: center
+
+.image-img
+  position: block
+  width: 100%
+
+.image-overlay
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, 0.6)
+  color: #fff
+  font-family: 'Quicksand', sans-serif
+  //display: flex
+  //flex-direction: column
+  //align-items: center
+  //justify-content: center
+  opacity: 0
+  transition: opacity 0.25s
+  backdrop-filter: blur(5px)
+
+.image-overlay > *
+    transform: translateY(20px)
+    transition: transform 0.25s
+
+.image-overlay:hover
+  opacity: 1
+
+.image-overlay:hover > *
+    translate: translateY(0)
+
+.image-title
+  font-size: 2em
+  font-weight: bold
+  padding: 5px
+
+.image-description
+  font-size: 1.2em
+
+@media screen and (max-width: 580px)
+  .image-overlay
+    opacity: 1
+
+  .image-overlay > *
+    transform: none
+
+  .image-subtitle
+    display: none
+
+  .image-title
+    font-size: 2vh
+    font-weight: normal
+
+  .image-description
+    display: none
